@@ -28,7 +28,6 @@ spec:
         app: profile
     spec:
       containers:
-#      - image: 10.102.251.144:5000/profile
       - image: ghcr.io/madforchili/jaykimprofile:latest
         imagePullPolicy: Always
         name: profile
