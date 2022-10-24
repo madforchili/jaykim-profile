@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: "2022-09-26T06:51:56Z"
+  generation: 1
+  labels:
+    app: profile
+  name: profile
+  namespace: default
+  resourceVersion: "929654"
+  uid: eb810bb1-02e6-4996-964c-cb5ab1bb56c7
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: profile
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: profile
+    spec:
+      containers:
+#      - image: 10.102.251.144:5000/profile
+      - image: ghcr.io/madforchili/jaykimprofile:latest
+        imagePullPolicy: Always
+        name: profile
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      imagePullSecrets:
+      - name: dockerconfigjson-github-com
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status: {}
