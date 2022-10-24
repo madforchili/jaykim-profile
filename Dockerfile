@@ -1,2 +1,2 @@
-FROM nginx:alpine
-COPY . /usr/share/nginx/html:q
+FROM nginx:latest
+COPY . /usr/share/nginx/html
