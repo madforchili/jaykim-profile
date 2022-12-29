@@ -5,7 +5,7 @@ AzureAD+JayKim@LAB3-1228793957 MINGW64 ~/local/github/madforchili/jaykim-profile
 $ docker build -t jaykimprofile .
 
 AzureAD+JayKim@LAB3-1228793957 MINGW64 ~/local/github/madforchili/jaykim-profile (main)
-$ export CR_PAT=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
+$ export CR_PAT=[github personal access token]
 
 AzureAD+JayKim@LAB3-1228793957 MINGW64 ~/local/github/madforchili/jaykim-profile (main)
 $ echo $CR_PAT | docker login ghcr.io -u madforchili --password-stdin
